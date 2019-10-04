@@ -4,7 +4,6 @@ import './App.css';
 
 import productsList from './data.json';
 import Table from './components/Table';
-
 import SearchBar from './components/Search'
 
 export default class App extends Component {
@@ -17,18 +16,15 @@ export default class App extends Component {
     }
   }
 
-  refineItemList = (query, showUnStocked) =>{
+  refineItemList = (query, showUnStocked) => {
 
     let clone = [...this.state.items];
 
-    let newList = clone.filter((eachThing)=>{
-      if(showUnStocked)
-      return eachThing.name.toUpperCase().includes(query.toUpperCase());
-    else
-      return eachThing.stocked && eachThing.name.toUpperCase().includes(query.toUpperCase()); 
+    let newList = clone.filter(eachThing => {
+      if(showUnStocked) return eachThing.name.toUpperCase().includes(query.toUpperCase());
+    else return eachThing.stocked && eachThing.name.toUpperCase().includes(query.toUpperCase()); 
     })
-
-    console.log(newList)
+    // console.log(newList);
     this.setState({
       visibleItems: newList
     })
@@ -36,21 +32,14 @@ export default class App extends Component {
 
 
   render() {
-
-    console.log(this.state);
-
+    // console.log(this.state);
     return (
       <div >
         <h1>Welcome to IronStore</h1>
-
         <SearchBar 
-        doTheSearch = {this.refineItemList} 
+          doTheSearch = {this.refineItemList} 
         />
-
-
         <Table allItems = {this.state.visibleItems} />
-
-      
       </div>
     );
   }
