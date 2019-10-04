@@ -12,8 +12,7 @@ class NewBeer extends React.Component{
         }
     }
 
-
-    addNew = e =>{
+    addNew = e => {
         e.preventDefault();
         const { newName, newTagLine, newContributor } = this.state;
         const newBeer = {
@@ -66,12 +65,6 @@ class NewBeer extends React.Component{
             </div>
         )
     }
-
-
-
-
-
-
 }
 
 export default NewBeer;
