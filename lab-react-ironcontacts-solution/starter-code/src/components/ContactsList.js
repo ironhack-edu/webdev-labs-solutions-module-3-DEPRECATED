@@ -7,7 +7,7 @@ import contactsFromJSON from '../contacts.json';
 // this is only true for json files because they do not have a default exported value
 
 
-export default class ContactList extends Component {
+export default class ContactsList extends Component {
 
     constructor(props){
         super(props);
