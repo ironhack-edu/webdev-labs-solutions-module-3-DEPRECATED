@@ -1,0 +1,11 @@
+.input-text {
+  width: 80%;
+  border-radius: 1%;
+  margin-bottom: 15px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
