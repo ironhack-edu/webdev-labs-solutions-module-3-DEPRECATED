@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import "./FilterableProductTable.css";
-import SearchBar from "../search-bar/SearchBar";
-import ProductList from "../product-list/ProductList";
+import React, { Component } from 'react';
+import './FilterableProductTable.css';
+import SearchBar from '../search-bar/SearchBar';
+import ProductList from '../product-list/ProductList';
 
 class ProductTable extends Component {
   state = {
-    searchValue: "",
-    stocked: false,
+    searchValue: '',
+    stocked: false
   };
 
-  handleStocked = (event) => {
+  handleStocked = event => {
     this.setState({
-      stocked: !this.state.stocked,
+      stocked: !this.state.stocked
     });
   };
 
-  handleSearch = (event) => {
+  handleSearch = event => {
     this.setState({ searchValue: event.target.value });
   };
 
@@ -25,16 +25,9 @@ class ProductTable extends Component {
     return (
       <div>
         <h1>IronStore</h1>
-        <SearchBar
-          handleSearch={this.handleSearch}
-          handleChangeCheckbox={this.handleStocked}
-        />
-        <div className="table-container">
-          <ProductList
-            data={this.props.products}
-            searchValue={searchValue}
-            stocked={stocked}
-          />
+        <SearchBar handleSearch={this.handleSearch} handleChangeCheckbox={this.handleStocked} />
+        <div className='table-container'>
+          <ProductList data={this.props.products} searchValue={searchValue} stocked={stocked} />
         </div>
       </div>
     );

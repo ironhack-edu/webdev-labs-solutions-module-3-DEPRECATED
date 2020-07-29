@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class FoodBox extends React.Component {
   state = {
@@ -17,32 +17,27 @@ class FoodBox extends React.Component {
     const { name, calories, image } = this.props.food;
 
     return (
-      <div className="box">
-        <article className="media">
-          <div className="media-left">
-            <figure className="image is-64x64">
-              <img src={image} alt="" />
+      <div className='box'>
+        <article className='media'>
+          <div className='media-left'>
+            <figure className='image is-64x64'>
+              <img src={image} alt='' />
             </figure>
           </div>
-          <div className="media-content">
-            <div className="content">
+          <div className='media-content'>
+            <div className='content'>
               <p>
                 <strong>{name}</strong> <br />
                 <small>{calories} cal</small>
               </p>
             </div>
           </div>
-          <div className="media-right">
-            <div className="field has-addons">
-              <div className="control">
-                <input
-                  onChange={this.handleChange}
-                  className="input"
-                  type="number"
-                  value={this.state.quantity}
-                />
+          <div className='media-right'>
+            <div className='field has-addons'>
+              <div className='control'>
+                <input onChange={this.handleChange} className='input' type='number' value={this.state.quantity} />
               </div>
-              <div className="control">
+              <div className='control'>
                 <button
                   onClick={() =>
                     this.props.addFood({
@@ -50,7 +45,7 @@ class FoodBox extends React.Component {
                       quantity: this.state.quantity
                     })
                   }
-                  className="button is-info"
+                  className='button is-info'
                 >
                   +
                 </button>

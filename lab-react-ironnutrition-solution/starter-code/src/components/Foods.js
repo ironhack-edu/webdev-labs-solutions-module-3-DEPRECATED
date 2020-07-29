@@ -1,8 +1,8 @@
-import React from "react";
-import FoodBox from "./FoodBox";
-import FoodForm from "./FoodForm";
-import Search from "./Search";
-import foods from "../foods.json";
+import React from 'react';
+import FoodBox from './FoodBox';
+import FoodForm from './FoodForm';
+import Search from './Search';
+import foods from '../foods.json';
 
 class Foods extends React.Component {
   state = {
@@ -19,9 +19,7 @@ class Foods extends React.Component {
   };
 
   filterFood = input => {
-    const filtered = this.state.foods.filter(el =>
-      el.name.toLowerCase().includes(input.toLowerCase())
-    );
+    const filtered = this.state.foods.filter(el => el.name.toLowerCase().includes(input.toLowerCase()));
     this.setState({ filtered });
   };
 
@@ -51,25 +49,22 @@ class Foods extends React.Component {
   };
 
   render() {
-    const totalCalories = this.state.today.reduce(
-      (acc, val) => acc + val.calories,
-      0
-    );
+    const totalCalories = this.state.today.reduce((acc, val) => acc + val.calories, 0);
 
     return (
       <div>
         <Search filterFood={this.filterFood} />
-        <button className="button" onClick={this.handleClick}>
+        <button className='button' onClick={this.handleClick}>
           Add Food
         </button>
         {this.state.form && <FoodForm pushFood={this.pushFood} />}
         <div>
-          <div style={{ width: "70%", float: "left" }}>
+          <div style={{ width: '70%', float: 'left' }}>
             {this.state.filtered.map((el, i) => (
               <FoodBox key={i} food={el} addFood={this.addFood} />
             ))}
           </div>
-          <div style={{ width: "30%", float: "right" }}>
+          <div style={{ width: '30%', float: 'right' }}>
             <h2>Today's food</h2>
             <ul>
               {this.state.today.map((el, i) => {

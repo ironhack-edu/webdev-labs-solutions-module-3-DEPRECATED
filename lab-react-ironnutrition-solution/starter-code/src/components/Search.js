@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 class Search extends React.Component {
   state = {
-    input: ""
+    input: ''
   };
   handleSearch = event => {
     const { value } = event.target;
@@ -15,10 +15,10 @@ class Search extends React.Component {
     return (
       <div>
         <input
-          type="text"
-          className="input"
+          type='text'
+          className='input'
           onChange={this.handleSearch}
-          placeholder="search..."
+          placeholder='search...'
           value={this.state.input}
         />
       </div>

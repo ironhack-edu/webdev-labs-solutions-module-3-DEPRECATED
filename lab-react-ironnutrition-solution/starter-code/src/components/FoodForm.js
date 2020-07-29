@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class FoodForm extends Component {
   state = {
-    foodName: "",
-    foodImg: "",
+    foodName: '',
+    foodImg: '',
     calories: 0
   };
 
@@ -25,8 +25,8 @@ export default class FoodForm extends Component {
     });
 
     this.setState({
-      foodName: "",
-      foodImg: "",
+      foodName: '',
+      foodImg: '',
       calories: 0
     });
   };
@@ -35,29 +35,29 @@ export default class FoodForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
-          className="input"
+          className='input'
           onChange={this.handleChange}
-          name="foodName"
-          type="text"
+          name='foodName'
+          type='text'
           value={this.state.foodName}
-          placeholder="tomato"
+          placeholder='tomato'
         />
         <input
-          className="input"
+          className='input'
           onChange={this.handleChange}
-          type="number"
-          name="calories"
+          type='number'
+          name='calories'
           value={this.state.calories}
         />
         <input
-          className="input"
+          className='input'
           onChange={this.handleChange}
-          name="foodImg"
-          type="text"
+          name='foodImg'
+          type='text'
           value={this.state.foodImg}
-          placeholder="https://i.imgur.com/5ktcSzF.jpg"
+          placeholder='https://i.imgur.com/5ktcSzF.jpg'
         />
-        <button className="button" type="submit">
+        <button className='button' type='submit'>
           Add
         </button>
       </form>

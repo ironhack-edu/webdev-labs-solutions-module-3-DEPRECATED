@@ -15,9 +15,7 @@ const GOT_SERVICE = {
     return service
       .get(`/episodes/${id}`)
       .then(res => res.data)
-      .catch(err =>
-        console.log(`Err while getting one episode details: `, err)
-      );
+      .catch(err => console.log(`Err while getting one episode details: `, err));
   }
 };
 

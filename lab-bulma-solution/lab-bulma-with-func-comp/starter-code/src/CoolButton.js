@@ -1,10 +1,9 @@
 import React from 'react';
 
-const CoolButton = (props) => {
+const CoolButton = props => {
+  console.log(props);
 
-  console.log(props)
-
-  const { isSmall, isDanger, className, isSuccess, children } = props
+  const { isSmall, isDanger, className, isSuccess, children } = props;
 
   const classNameString = `
     button
@@ -12,13 +11,9 @@ const CoolButton = (props) => {
     ${isSmall ? 'is-small' : ''}
     ${isDanger ? 'is-danger' : ''}
     ${isSuccess ? 'is-success' : ''}
-  `
+  `;
 
-  return (
-    <button className={classNameString}>
-      {children}
-    </button>
-  )
+  return <button className={classNameString}>{children}</button>;
 };
 
 export default CoolButton;

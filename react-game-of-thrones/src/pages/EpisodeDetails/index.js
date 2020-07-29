@@ -20,13 +20,9 @@ class EpisodeDetails extends React.Component {
   render() {
     const { episode } = this.state;
     console.log(episode);
-    const summary = episode.summary
-      ? episode.summary.replace(/<p>/g, '').replace(/<\/p>/g, '')
-      : '';
+    const summary = episode.summary ? episode.summary.replace(/<p>/g, '').replace(/<\/p>/g, '') : '';
 
-    const image = episode.image
-      ? episode.image.medium
-      : this.props.defaultImage;
+    const image = episode.image ? episode.image.medium : this.props.defaultImage;
 
     const dateToFormat = new Date(episode.airdate);
 
@@ -43,8 +39,7 @@ class EpisodeDetails extends React.Component {
             </h4>
             <div className='text-left'>
               <p>
-                <strong>Airdate</strong>:{' '}
-                <Moment format='dddd MMMM D Y'>{dateToFormat}</Moment>
+                <strong>Airdate</strong>: <Moment format='dddd MMMM D Y'>{dateToFormat}</Moment>
               </p>
               <p>
                 <strong>Summary</strong>: {summary}

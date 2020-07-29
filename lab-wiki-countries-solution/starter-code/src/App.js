@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import CountriesList from "./components/CountriesList";
-import CountryDetails from "./components/CountryDetails";
-import axios from "axios";
-import "./App.css";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import CountriesList from './components/CountriesList';
+import CountryDetails from './components/CountryDetails';
+import axios from 'axios';
+import './App.css';
 // import countries from "./countries.json";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount() {
     // console.log("did mount");
     axios
-      .get("https://countries.tech-savvy.tech/countries")
+      .get('https://countries.tech-savvy.tech/countries')
       .then(response => {
         // console.log("api response");
         this.setState({ countries: response.data });
@@ -26,7 +26,7 @@ class App extends Component {
   // for learning purposes
   componentDidUpdate(prevProps, prevState) {
     // console.log(prevProps, prevState)
-    console.log("update");
+    console.log('update');
   }
 
   render() {
@@ -39,27 +39,18 @@ class App extends Component {
     //   }
 
     return (
-      <div className="App">
+      <div className='App'>
         <div>
           <Navbar />
-          <div className="container">
-            <div className="row">
-              <div
-                className="col-5"
-                style={{ maxHeight: "90vh", overflow: "scroll" }}
-              >
-                <div className="list-group">
+          <div className='container'>
+            <div className='row'>
+              <div className='col-5' style={{ maxHeight: '90vh', overflow: 'scroll' }}>
+                <div className='list-group'>
                   <CountriesList countries={countries} />
                 </div>
               </div>
               <Switch>
-                <Route
-                  exact
-                  path="/:cca3"
-                  render={props => (
-                    <CountryDetails {...props} countries={countries} />
-                  )}
-                />
+                <Route exact path='/:cca3' render={props => <CountryDetails {...props} countries={countries} />} />
               </Switch>
             </div>
           </div>

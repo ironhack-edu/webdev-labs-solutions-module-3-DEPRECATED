@@ -19,20 +19,14 @@ class SingleEpisode extends React.Component {
       //   <div className='col-4 mb-4' key={i}>
       <div className='card'>
         <Link to={`/episodes/${episode.id}`}>
-          <img
-            src={episode.image.medium}
-            className='card-img-top'
-            alt={episode.name}
-          />
+          <img src={episode.image.medium} className='card-img-top' alt={episode.name} />
         </Link>
         <div className='card-body'>
           <h5 className='card-title'>{episode.name}</h5>
           <h6 className='card-title'>
             S{episode.season} E{episode.number}
           </h6>
-          <p className='card-text'>
-            {this.state.showFull ? summaryFull : summaryShort}
-          </p>
+          <p className='card-text'>{this.state.showFull ? summaryFull : summaryShort}</p>
           <a href='#' className='card-link' onClick={this.readMore}>
             {this.state.showFull ? 'Read Less' : 'Read More'}
           </a>

@@ -5,9 +5,9 @@ import CoolButton from './CoolButton';
 import SignUp from './SignUp';
 
 const App = () => (
-  <div className="App">
-    <SignUp/>
+  <div className='App'>
+    <SignUp />
   </div>
-)
+);
 
 export default App;
